@@ -1,19 +1,16 @@
 import React from "react";
 
 class Win extends React.Component {
-  winnerSetup = () => {
-    if (this.props.total2 >= 10 || this.props.total1) {
+  componentDidUpdate() {
+    if (
+      this.props.total2 >= this.props.winningValue ||
+      this.props.total1 >= this.props.winningValue
+    ) {
       this.props.func();
     }
-  };
+  }
   render() {
-    this.winnerSetup();
-    return (
-      <div>
-        {this.props.total1 > 10 ? "yes" : ""}
-        {this.props.total2 > 10 ? "yes" : ""}
-      </div>
-    );
+    return <div>{this.props.winnerTest !== 1 ? "yes" : ""}</div>;
   }
 }
 export default Win;

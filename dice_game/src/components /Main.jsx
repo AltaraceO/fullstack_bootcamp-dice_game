@@ -13,6 +13,7 @@ class Main extends React.Component {
     total1: 0,
     sum2: 0,
     total2: 0,
+    winnerTest: 1,
   };
 
   changePlayer = () => {
@@ -39,6 +40,7 @@ class Main extends React.Component {
   };
 
   winner = () => {
+    Object.keys(this.state).map((i) => this.setState({ [i]: 0 }));
     const newArr = { ...this.state };
     console.log(this.state);
     console.log(newArr);
@@ -60,6 +62,8 @@ class Main extends React.Component {
           total1={this.state.total1}
           total2={this.state.total2}
           func={this.winner}
+          winnerTest={this.state.winnerTest}
+          winningValue={20}
         />
 
         <Player playerNo={2} sum={this.state.sum2} total={this.state.total2} />
