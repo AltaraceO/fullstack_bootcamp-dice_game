@@ -6,16 +6,24 @@ import Roll from "./Roll";
 class Main extends React.Component {
   state = { dieOne: "", dieTwo: "" };
 
-  value = (<Roll />);
+  updatedDieState = (die1, die2) => {
+    this.setState({ dieOne: die1 });
+    this.setState({ dieTwo: die2 });
+  };
+  //   rollValues = (die1, die2) => {
+  //     this.setState({ dieOne: die1 });
+  //     this.setState({ dieTwo: die2 });
+  //   };
+
   render() {
-    console.log(this.value);
+    console.log(`======================================`);
+    console.log(this.state.dieOne, this.state.dieTwo);
     return (
       <div>
-        <Player player={"number"} />
-        <Roll />
-        <Roll />
+        <Player player={this.state.dieOne} />
+        <Roll func={this.updatedDieState} />
 
-        <Player player={"number"} />
+        <Player player={this.state.dieTwo} />
       </div>
     );
   }
