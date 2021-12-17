@@ -4,7 +4,18 @@ class Player extends React.Component {
   state = {};
 
   render() {
-    return <div></div>;
+    return (
+      <div>
+        <div>
+          <div>Player {this.props.player}</div>
+          <div>0</div>
+        </div>
+        <div>
+          <div>current </div>
+          <div>0</div>
+        </div>
+      </div>
+    );
   }
 }
 

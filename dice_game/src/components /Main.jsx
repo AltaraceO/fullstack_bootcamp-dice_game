@@ -1,11 +1,23 @@
 import React from "react";
 import Player from "./Player";
+import Dice from "./Dice";
+import Roll from "./Roll";
 
 class Main extends React.Component {
-  state = {};
+  state = { dieOne: "", dieTwo: "" };
 
+  value = (<Roll />);
   render() {
-    return <div> Hello world</div>;
+    console.log(this.value);
+    return (
+      <div>
+        <Player player={"number"} />
+        <Roll />
+        <Roll />
+
+        <Player player={"number"} />
+      </div>
+    );
   }
 }
 
