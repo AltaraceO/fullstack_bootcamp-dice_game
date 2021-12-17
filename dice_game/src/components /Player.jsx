@@ -14,7 +14,7 @@ class Player extends React.Component {
         </div>
         <div>
           <div>current </div>
-          <div>{this.props.dieOne + this.props.dieTwo}</div>
+          <div>{this.props.sum}</div>
         </div>
       </div>
     );
