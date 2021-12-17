@@ -1,14 +1,14 @@
 import React from "react";
 import Player from "./Player";
-import Dice from "./Dice";
+import Win from "./Win";
 import Roll from "./Roll";
 import Hold from "./Hold";
 
 class Main extends React.Component {
   state = {
     currPlayer: 0,
-    dieOne: "",
-    dieTwo: "",
+    dieOne: 0,
+    dieTwo: 0,
     sum1: 0,
     total1: 0,
     sum2: 0,
@@ -38,6 +38,12 @@ class Main extends React.Component {
     }
   };
 
+  winner = () => {
+    const newArr = { ...this.state };
+    console.log(this.state);
+    console.log(newArr);
+  };
+
   render() {
     console.log(`======================================`);
     console.log(this.state.sum1);
@@ -49,6 +55,12 @@ class Main extends React.Component {
 
         <Roll func={this.updatedDieState} />
         <Hold func={this.changePlayer} />
+
+        <Win
+          total1={this.state.total1}
+          total2={this.state.total2}
+          func={this.winner}
+        />
 
         <Player playerNo={2} sum={this.state.sum2} total={this.state.total2} />
       </div>
