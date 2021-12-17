@@ -24,7 +24,7 @@ class Roll extends React.Component {
       <div>
         <img src={`./dice-images/dice-${this.state.prevDie1}.png`} alt="" />
         <img src={`./dice-images/dice-${this.state.prevDie2}.png`} alt="" />
-        <button onClick={this.onButtonClick}>click here to test</button>
+        <button onClick={this.onButtonClick}>Roll</button>
       </div>
     );
   }
