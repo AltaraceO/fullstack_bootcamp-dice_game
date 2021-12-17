@@ -1,14 +1,20 @@
 import React from "react";
 
 class Player extends React.Component {
-  state = {};
+  state = { value: "", sum: "" };
+
+  otherfunc = () => {
+    this.setState({ sum: this.props.player });
+  };
 
   render() {
+    console.log(this.state.sum);
     return (
       <div>
         <div>
           <div>Player {this.props.player}</div>
-          <div>0</div>
+          {() => this.otherfunc()}
+          <div></div>
         </div>
         <div>
           <div>current </div>

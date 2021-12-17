@@ -19,20 +19,7 @@ class Roll extends React.Component {
     this.updateState();
   };
 
-  //   componentDidUpdate = () => {
-  //     console.log(this.state.prevDie1, this.state.prevDie2);
-  //     if (
-  //       this.state.die1 !== this.state.die2 &&
-  //       this.state.die2 !== this.state.prevDie2
-  //     ) {
-  //       console.log("yes");
-  //       this.props.func(this.state.die1, this.state.die2);
-  //     }
-  //   };
-
   render() {
-    console.log(this.state.die1, this.state.die2);
-    console.log("++++++++++++++++++++++++++");
     return (
       <div>
         <img src={`./dice-images/dice-${this.state.prevDie1}.png`} alt="" />

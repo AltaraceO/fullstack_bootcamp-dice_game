@@ -10,10 +10,6 @@ class Main extends React.Component {
     this.setState({ dieOne: die1 });
     this.setState({ dieTwo: die2 });
   };
-  //   rollValues = (die1, die2) => {
-  //     this.setState({ dieOne: die1 });
-  //     this.setState({ dieTwo: die2 });
-  //   };
 
   render() {
     console.log(`======================================`);
