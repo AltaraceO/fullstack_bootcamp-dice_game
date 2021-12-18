@@ -8,15 +8,11 @@ class Win extends React.Component {
       (this.props.total1 >= this.props.winningValue &&
         typeof this.props.total1 === "number")
     ) {
-      let winningScore = this.props.total1;
       this.props.func();
-      return winningScore;
     }
   }
   render() {
-    return (
-      <div>{this.props.winnerTest !== 1 ? `${this.winningScore}` : ""}</div>
-    );
+    return <div>{this.props.winnerTest !== "visible" ? `win` : ""}</div>;
   }
 }
 export default Win;

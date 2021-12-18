@@ -14,7 +14,7 @@ class Main extends React.Component {
     total1: 0,
     sum2: 0,
     total2: 0,
-    winnerTest: 1,
+    winnerTest: "visible",
   };
 
   changePlayer = () => {
@@ -43,8 +43,17 @@ class Main extends React.Component {
   winner = () => {
     for (let i of Object.keys(this.state)) {
       if (i === "total1") {
-        // console.log(i);
-        this.setState({ [i]: this.state.total1 + "" });
+        this.setState({
+          [i]: this.state.total1 + "",
+        });
+      } else if (i === "total2") {
+        this.setState({
+          [i]: this.state.total2 + "",
+        });
+      } else if (i === "winnerTest") {
+        this.setState({ [i]: "invisible" });
+      } else if (i === "currPlayer") {
+        console.log("curr");
       } else {
         this.setState({ [i]: 0 });
       }
@@ -53,18 +62,21 @@ class Main extends React.Component {
 
   render() {
     console.log(`======================================`);
-    console.log(this.state.winnerTest);
-    console.log(typeof this.state.total1);
-    console.log(this.state.total1);
-    // console.log(this.state.currPlayer);
+    // console.log(this.state);
     return (
       <div className="main">
-        <Player playerNo={1} sum={this.state.sum1} total={this.state.total1} />
-
-        <div className="game-center">
-          <Roll func={this.updatedDieState} />
-          <Hold func={this.changePlayer} />
-
+        <div className={`current0${this.state.currPlayer}`}>
+          <Player
+            playerNo={1}
+            sum={this.state.sum1}
+            total={this.state.total1}
+          />
+        </div>
+        <div>
+          <div className="game-center" className={this.state.winnerTest}>
+            <Roll func={this.updatedDieState} />
+            <Hold func={this.changePlayer} />
+          </div>
           <Win
             total1={this.state.total1}
             total2={this.state.total2}
@@ -73,8 +85,14 @@ class Main extends React.Component {
             winningValue={20}
           />
         </div>
-
-        <Player playerNo={2} sum={this.state.sum2} total={this.state.total2} />
+        <div className={`current1${this.state.currPlayer}`}>
+          <Player
+            curr={this.state.currPlayer}
+            playerNo={2}
+            sum={this.state.sum2}
+            total={this.state.total2}
+          />
+        </div>
       </div>
     );
   }

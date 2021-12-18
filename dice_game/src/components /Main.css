@@ -1,3 +1,6 @@
+.invisible {
+  visibility: hidden;
+}
 .main {
   display: flex;
   height: 100vh;
@@ -13,4 +16,13 @@
   justify-content: center;
   align-items: center;
   height: 100%;
+}
+
+.current00 {
+  color: red;
+  border: red solid 1px;
+}
+.current11 {
+  color: red;
+  border: red solid 1px;
 }
