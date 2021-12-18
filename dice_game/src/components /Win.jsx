@@ -12,7 +12,11 @@ class Win extends React.Component {
     }
   }
   render() {
-    return <div>{this.props.winnerTest !== "visible" ? `win` : ""}</div>;
+    return (
+      <div>
+        <div>{this.props.winnerTest !== "visible" ? `win` : ""}</div>
+      </div>
+    );
   }
 }
 export default Win;

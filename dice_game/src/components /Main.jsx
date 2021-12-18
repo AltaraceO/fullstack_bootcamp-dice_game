@@ -3,6 +3,7 @@ import Player from "./Player";
 import Win from "./Win";
 import Roll from "./Roll";
 import Hold from "./Hold";
+import Restart from "./Restart";
 import "./Main.css";
 
 class Main extends React.Component {
@@ -60,6 +61,18 @@ class Main extends React.Component {
     }
   };
 
+  refresh = () => {
+    Object.keys(this.state).map((x) => {
+      if (x === "winnerTest") {
+        this.setState({
+          [x]: "visible",
+        });
+      } else {
+        this.setState({ [x]: 0 });
+      }
+    });
+  };
+
   render() {
     console.log(`======================================`);
     // console.log(this.state);
@@ -84,6 +97,7 @@ class Main extends React.Component {
             winnerTest={this.state.winnerTest}
             winningValue={20}
           />
+          <Restart func={this.refresh} />
         </div>
         <div className={`current1${this.state.currPlayer}`}>
           <Player
