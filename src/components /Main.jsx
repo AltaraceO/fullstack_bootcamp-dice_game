@@ -62,7 +62,7 @@ class Main extends React.Component {
   };
 
   refresh = () => {
-    Object.keys(this.state).map((x) => {
+    Object.keys(this.state).forEach((x) => {
       if (x === "winnerTest") {
         this.setState({
           [x]: "visible",
@@ -86,7 +86,7 @@ class Main extends React.Component {
           />
         </div>
         <div>
-          <div className="game-center" className={this.state.winnerTest}>
+          <div className={`game-center ${this.state.winnerTest}`}>
             <Roll func={this.updatedDieState} />
             <Hold func={this.changePlayer} />
           </div>
