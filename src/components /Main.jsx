@@ -26,6 +26,10 @@ class Main extends React.Component {
     }
   };
 
+  switchNClear = () => {
+    this.changePlayer();
+  };
+
   updatedDieState = (die1, die2) => {
     const total1 = this.state.total1;
     const total2 = this.state.total2;
@@ -87,7 +91,7 @@ class Main extends React.Component {
         </div>
         <div>
           <div className={`game-center ${this.state.winnerTest}`}>
-            <Roll func={this.updatedDieState} />
+            <Roll func={this.updatedDieState} func2={this.switchNClear} />
             <Hold func={this.changePlayer} />
           </div>
           <Win

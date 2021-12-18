@@ -11,9 +11,10 @@ class Roll extends React.Component {
   updateState = () => {
     const newState = { die1: this.randomRoll(), die2: this.randomRoll() };
 
-    // if (this.state.die1 === 6 && this.state.die2 === 6) {
-    //   console.log("66");
-    // }
+    if (newState.die1 === newState.die2) {
+      console.log("Awwww shhhhhiiitt");
+      this.props.func2();
+    }
     this.props.func(newState.die1, newState.die2);
 
     this.setState(newState);
