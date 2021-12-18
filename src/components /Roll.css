@@ -1,3 +1,11 @@
 .die {
   max-width: 100px;
+  border-radius: 5px;
+}
+
+.image {
+  height: 100px;
+  width: 100px;
+  background: white;
+  border-radius: 10px;
 }

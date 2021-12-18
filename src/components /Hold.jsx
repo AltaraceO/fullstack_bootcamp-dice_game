@@ -1,4 +1,5 @@
 import React from "react";
+import "./Main.css";
 
 class Hold extends React.Component {
   change = () => {
@@ -7,7 +8,9 @@ class Hold extends React.Component {
   render() {
     return (
       <div>
-        <button onClick={this.change}>hold</button>
+        <button className="button" onClick={this.change}>
+          hold
+        </button>
       </div>
     );
   }

@@ -16,13 +16,37 @@
   justify-content: center;
   align-items: center;
   height: 100%;
+  gap: 20px;
 }
 
 .current00 {
   color: red;
   border: red solid 1px;
+  border-radius: 3px;
 }
 .current11 {
   color: red;
   border: red solid 1px;
+  border-radius: 3px;
+}
+
+.player {
+  font-size: 2rem;
+  padding: 1rem;
+}
+
+.current {
+  font-size: 1.5rem;
+  padding: 1rem;
+}
+
+.button {
+  background: none;
+  margin: 10px;
+  padding: 5px 10px;
+  border-radius: 3px;
+}
+
+.button:hover {
+  cursor: pointer;
 }
