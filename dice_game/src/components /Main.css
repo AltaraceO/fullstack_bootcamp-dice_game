@@ -1,0 +1,16 @@
+.main {
+  display: flex;
+  height: 100vh;
+  justify-content: space-around;
+  align-items: center;
+  text-align: center;
+  background-color: antiquewhite;
+}
+
+.game-center {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}

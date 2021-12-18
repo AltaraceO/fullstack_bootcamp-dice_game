@@ -3,6 +3,7 @@ import Player from "./Player";
 import Win from "./Win";
 import Roll from "./Roll";
 import Hold from "./Hold";
+import "./Main.css";
 
 class Main extends React.Component {
   state = {
@@ -40,31 +41,38 @@ class Main extends React.Component {
   };
 
   winner = () => {
-    Object.keys(this.state).map((i) => this.setState({ [i]: 0 }));
-    const newArr = { ...this.state };
-    console.log(this.state);
-    console.log(newArr);
+    for (let i of Object.keys(this.state)) {
+      if (i === "total1") {
+        // console.log(i);
+        this.setState({ [i]: this.state.total1 + "" });
+      } else {
+        this.setState({ [i]: 0 });
+      }
+    }
   };
 
   render() {
     console.log(`======================================`);
-    console.log(this.state.sum1);
+    console.log(this.state.winnerTest);
+    console.log(typeof this.state.total1);
     console.log(this.state.total1);
-    console.log(this.state.currPlayer);
+    // console.log(this.state.currPlayer);
     return (
-      <div>
+      <div className="main">
         <Player playerNo={1} sum={this.state.sum1} total={this.state.total1} />
 
-        <Roll func={this.updatedDieState} />
-        <Hold func={this.changePlayer} />
+        <div className="game-center">
+          <Roll func={this.updatedDieState} />
+          <Hold func={this.changePlayer} />
 
-        <Win
-          total1={this.state.total1}
-          total2={this.state.total2}
-          func={this.winner}
-          winnerTest={this.state.winnerTest}
-          winningValue={20}
-        />
+          <Win
+            total1={this.state.total1}
+            total2={this.state.total2}
+            func={this.winner}
+            winnerTest={this.state.winnerTest}
+            winningValue={20}
+          />
+        </div>
 
         <Player playerNo={2} sum={this.state.sum2} total={this.state.total2} />
       </div>

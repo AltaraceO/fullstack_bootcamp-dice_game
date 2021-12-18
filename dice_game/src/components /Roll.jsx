@@ -1,4 +1,5 @@
 import React from "react";
+import "./Roll.css";
 
 class Roll extends React.Component {
   state = { die1: "", die2: "", prevDie1: "", prevDie2: "" };
@@ -21,9 +22,17 @@ class Roll extends React.Component {
 
   render() {
     return (
-      <div>
-        <img src={`./dice-images/dice-${this.state.prevDie1}.png`} alt="" />
-        <img src={`./dice-images/dice-${this.state.prevDie2}.png`} alt="" />
+      <div className="game-center">
+        <img
+          className="die"
+          src={`./dice-images/dice-${this.state.prevDie1}.png`}
+          alt=""
+        />
+        <img
+          className="die"
+          src={`./dice-images/dice-${this.state.prevDie2}.png`}
+          alt=""
+        />
         <button onClick={this.onButtonClick}>Roll</button>
       </div>
     );
